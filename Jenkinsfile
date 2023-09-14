@@ -16,11 +16,17 @@ pipeline {
 		stage('Deployment'){
 		    steps {
 			script {
-			 if ( env.ENVIRONMENT == 'QA' ){
-        			sh 'cp target/CICDWITHCONDITION.war /home/swapnil/Documents/DevOps-Software/apache-tomcat-9.0.79/webapps'
-			 }
-			else  ( env.ENVIRONMENT == 'UAT' ){
-    				sh 'cp target/CICDWITHCONDITION.war /home/swapnil/Documents/DevOps-Software/apache-tomcat-9.0.79/webapps'
-			}
+			 if (env.BRANCH_NAME == 'main') 
+                        {
+                        echo 'Hello from main branch'
+                        }
+                    	if (env.BRANCH_NAME == 'null') 
+                        {
+                        echo 'Hello from null branch'
+                        }
+                    	else {
+                        sh "echo 'Hello from ${env.BRANCH_NAME} branch!'"
+                        }
+                    
 			}}}}	
 }
