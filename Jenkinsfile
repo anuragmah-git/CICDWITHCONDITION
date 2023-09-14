@@ -17,10 +17,10 @@ pipeline {
 		    steps {
 		        script {
 			 if ( env.ENVIRONMENT == 'QA' ){
-        sh 'cp target/flipkart.war /home/swapnil/Documents/DevOps-Software/apache-tomcat-9.0.79/webapps'
+        sh 'cp target/CICDWITHCONDITION.war /home/swapnil/Documents/DevOps-Software/apache-tomcat-9.0.79/webapps'
 			 }
 else  ( env.ENVIRONMENT == 'UAT' ){
-    sh 'cp target/flipkart.war /home/swapnil/Documents/DevOps-Software/apache-tomcat-9.0.79/webapps'
+    sh 'cp target/CICDWITHCONDITION.war /home/swapnil/Documents/DevOps-Software/apache-tomcat-9.0.79/webapps'
 }
         
 echo "deployment has been done!"
