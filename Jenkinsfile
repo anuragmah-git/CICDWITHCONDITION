@@ -12,7 +12,7 @@ pipeline {
 		stage('Deployment'){
 		    steps {
 			script {
-			 if (env.BRANCH_NAME == 'main') 
+			 if (env.BRANCH_NAME == 'master') 
                         {
                         echo 'Hello from main branch'
                         }
